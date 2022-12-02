@@ -1,0 +1,9 @@
+package Model;
+
+import org.hibernate.annotations.Table;
+
+@Entity
+@Table(name="student")
+public class Student {
+
+}

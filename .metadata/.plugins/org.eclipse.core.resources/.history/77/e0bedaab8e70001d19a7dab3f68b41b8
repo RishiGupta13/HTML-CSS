@@ -1,0 +1,11 @@
+package Model;
+
+import org.hibernate.annotations.Table;
+
+import jakarta.persistence.Entity;
+
+@Entity
+@Table(name="student")
+public class Student {
+
+}

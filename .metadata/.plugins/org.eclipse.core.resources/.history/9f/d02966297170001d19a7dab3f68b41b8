@@ -1,0 +1,26 @@
+package com.p1;
+
+import java.util.Properties;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.cfg.Environment;
+
+public class HibernateUtil {
+	private static SessionFactory sessionFactory;
+	
+	public static SessionFactory getsessionFactory() {
+		if(sessionFactory==null) {
+			
+		}
+		try {
+			Configuration configuration=new Configuration();
+		
+		Properties settings=new Properties();
+		
+		settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+		settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+
+	}
+
+}

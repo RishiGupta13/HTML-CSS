@@ -1,0 +1,13 @@
+package com.p1;
+
+import org.hibernate.Transaction;
+
+public class StudentDao {
+	
+	public void saveStudent(Student student) {
+		Transaction transaction=null;
+		
+	}
+}
+
+				

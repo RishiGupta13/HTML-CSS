@@ -1,0 +1,28 @@
+package config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@EnableTransactionManagement
+@EnableAutoConfiguration(exclude= {HibernateJpaAutoConfiguration.class})
+@ComponentScans(value= {@ComponentScan("boot.entry"),
+		@ComponentScan("Model")
+        @ComponentScan("Controller")
+        @ComponentScan("DAO")
+        @ComponentScan("Miscallaneous"),
+        @ComponentScan("Service")
+})
+public class Configu {
+	
+	@Value("${db.driver}")
+	private String DB_Driver;
+	
+	@Value("${db.password}")
+	private String DB_PASSWORD;
+	
+	@Value("${db.username}")
+	private String DB_USERNAME;
+}

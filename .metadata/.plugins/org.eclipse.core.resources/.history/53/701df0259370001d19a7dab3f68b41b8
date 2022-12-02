@@ -1,0 +1,17 @@
+package DAO;
+
+import org.hibernate.Session;
+
+public class Student_DAO_Imp {
+	
+	@Override
+	public List<Student> getStudents(){
+		Session currentSession=sessionFactory.getCurrentSession();
+		
+		Query<Student> query=currentSession.createQuery("from Student",Student.class);
+		
+		List<Student> list=query.getResultList();
+		return list;
+	}
+
+}

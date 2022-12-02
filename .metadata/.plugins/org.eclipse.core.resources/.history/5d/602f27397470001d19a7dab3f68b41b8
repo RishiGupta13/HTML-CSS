@@ -1,0 +1,14 @@
+package com.p1;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	StudentDao studentDao=new StudentDao();
+    	Student student=new Student("Ramesh","Fadatare","rameshfadatare@gmail.com");'
+    }
+}

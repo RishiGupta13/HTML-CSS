@@ -1,0 +1,8 @@
+package config;
+
+
+@EnableTransactionManagement
+@EnableAutoConfiguration(exclude= {HibernateJpaAutoConfiguration.class})
+public class Configu {
+
+}

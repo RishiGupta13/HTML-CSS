@@ -1,0 +1,33 @@
+package Model;
+
+import org.hibernate.annotations.Table;
+
+import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+@Table(name="student")
+public class Student {
+	@Id
+	@Generated(strategy=GenerationType.IDENTITY)
+	private int student_id;
+	private String student_name;
+	private String student_email;
+	private String student_branch;
+	
+	public int getStudent_id() {
+		return student_id;
+	}
+	
+	public void  setStudent_id(int student_id) {
+		this.student_id=student_id;
+	}
+	
+	
+
+	
+	
+
+}

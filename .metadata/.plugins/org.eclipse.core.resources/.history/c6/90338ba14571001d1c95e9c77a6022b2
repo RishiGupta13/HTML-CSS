@@ -1,0 +1,52 @@
+package com.p1.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.p1.model.Customers;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:4150")
+public class HelloController {
+	
+	List <Customers> customerList = new ArrayList<Customers>();
+	
+	//@RequestMapping(value = "/Customers", method = RequestMethod.GET)
+	@GetMapping(value = "/Custs", produces = "application/json")
+	public List <Customers> test(Model model) {	
+		//customerList.add(new Customers("abc", "xyz" ));
+		//customerList.add(new Customers("a2", "b2" ));
+		return customerList;
+	}
+	
+	@DeleteMapping(path = { "/{name}" })
+	public Customers delete(@PathVariable("name") String name) {
+		Customers deletedCust = null;
+		for (Customers cust : customerList) {
+			if (cust.getFirstName().equals(name)) {
+				customerList.remove(cust);
+				deletedCust = cust;
+				break;
+			}
+		}
+		return deletedCust;
+	}
+
+	@PostMapping("/addCustomers")
+	public Customers create(@RequestBody Customers cust) {
+		customerList.add(cust);
+		System.out.println(customerList);
+		return cust;
+	}
+}

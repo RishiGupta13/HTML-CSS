@@ -1,0 +1,8 @@
+package Model;
+
+
+@Entity
+@Table(name="student")
+public class Student {
+
+}
